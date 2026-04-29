@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jossellin Canizalez – Portafolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --teal-50: #e1f5ee;
+        --teal-200: #5dcaa5;
+        --teal-400: #1d9e75;
+        --teal-600: #0f6e56;
+        --teal-800: #085041;
+        --gray-50: #f1efe8;
+        --gray-200: #b4b2a9;
+        --gray-600: #5f5e5a;
+        --gray-800: #444441;
+        --white: #fff;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: #f7f8f6;
+        color: #2c2c2a;
+        line-height: 1.7;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 0.5px solid #d3d1c7;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        height: 58px;
+      }
+      .nav-brand {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: var(--teal-600);
+        letter-spacing: -0.3px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gray-600);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--teal-400);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 88vh;
+        align-items: center;
+        padding: 5rem 2.5rem 4rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        gap: 4rem;
+      }
+      .hero-text {
+        animation: fadeUp 0.7s ease both;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--teal-50);
+        color: var(--teal-600);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+        border: 0.5px solid var(--teal-200);
+      }
+      .hero-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--teal-400);
+      }
+      h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+        line-height: 1.1;
+        letter-spacing: -1px;
+        color: #1a1a18;
+        margin-bottom: 1.2rem;
+      }
+      h1 em {
+        color: var(--teal-400);
+        font-style: italic;
+      }
+      .hero-sub {
+        font-size: 17px;
+        font-weight: 300;
+        color: var(--gray-600);
+        max-width: 440px;
+        margin-bottom: 2rem;
+        line-height: 1.75;
+      }
+      .btn-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 11px 26px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.18s;
+      }
+      .btn-primary {
+        background: var(--teal-600);
+        color: #fff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background: var(--teal-800);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--teal-600);
+        border: 1px solid var(--teal-200);
+      }
+      .btn-outline:hover {
+        background: var(--teal-50);
+      }
+
+      .hero-visual {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 16px;
+        animation: fadeUp 0.7s 0.15s ease both;
+      }
+      .avatar-card {
+        background: var(--white);
+        border: 0.5px solid #d3d1c7;
+        border-radius: 20px;
+        padding: 2rem 2rem 1.5rem;
+        width: 100%;
+        max-width: 340px;
+        text-align: center;
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+      }
+      .avatar-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: var(--teal-50);
+        border: 3px solid var(--teal-200);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-family: "DM Serif Display", serif;
+        font-size: 30px;
+        color: var(--teal-600);
+        overflow: hidden;
+      }
+      .avatar-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .avatar-name {
+        font-family: "DM Serif Display", serif;
+        font-size: 20px;
+        color: #1a1a18;
+      }
+      .avatar-title {
+        font-size: 13px;
+        color: var(--gray-600);
+        margin-top: 4px;
+      }
+      .avatar-divider {
+        height: 0.5px;
+        background: #d3d1c7;
+        margin: 1rem 0;
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-around;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-num {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--teal-600);
+        font-family: "DM Serif Display", serif;
+      }
+      .stat-lbl {
+        font-size: 11px;
+        color: var(--gray-600);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .floating-badge {
+        background: var(--white);
+        border: 0.5px solid #d3d1c7;
+        border-radius: 12px;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--teal-800);
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+      }
+      .dot-green {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #63c220;
+        flex-shrink: 0;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 5rem 2.5rem;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--teal-400);
+        margin-bottom: 0.5rem;
+      }
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+        color: #1a1a18;
+        letter-spacing: -0.5px;
+        margin-bottom: 2.5rem;
+        line-height: 1.2;
+      }
+      .divider {
+        height: 0.5px;
+        background: #d3d1c7;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .about-text p {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--gray-800);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+      .highlight-box {
+        background: var(--teal-50);
+        border-left: 3px solid var(--teal-400);
+        border-radius: 0 10px 10px 0;
+        padding: 1.2rem 1.5rem;
+        font-size: 15px;
+        font-style: italic;
+        color: var(--teal-800);
+        margin-top: 1.5rem;
+      }
+      .values-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .value-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        background: var(--white);
+        border: 0.5px solid #d3d1c7;
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+      }
+      .value-icon {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--teal-50);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .value-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--teal-600);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .value-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: #1a1a18;
+      }
+      .value-desc {
+        font-size: 13px;
+        color: var(--gray-600);
+      }
+
+      .skills-bg {
+        background: var(--white);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .skill-card {
+        background: #f7f8f6;
+        border: 0.5px solid #d3d1c7;
+        border-radius: 12px;
+        padding: 1.3rem 1.4rem;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .skill-card:hover {
+        border-color: var(--teal-200);
+        transform: translateY(-2px);
+      }
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .skill-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #1a1a18;
+      }
+      .skill-pct {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--teal-600);
+      }
+      .skill-bar {
+        height: 4px;
+        background: #d3d1c7;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .skill-fill {
+        height: 100%;
+        background: var(--teal-400);
+        border-radius: 2px;
+      }
+      .cert-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 2rem;
+      }
+      .cert-pill {
+        background: var(--teal-50);
+        color: var(--teal-800);
+        border: 0.5px solid var(--teal-200);
+        border-radius: 20px;
+        padding: 7px 16px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background: #d3d1c7;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: -2.4rem;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--teal-400);
+        border: 3px solid var(--white);
+        box-shadow: 0 0 0 1px var(--teal-200);
+      }
+      .timeline-date {
+        font-size: 12px;
+        color: var(--teal-400);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .timeline-role {
+        font-size: 17px;
+        font-weight: 500;
+        color: #1a1a18;
+        font-family: "DM Serif Display", serif;
+      }
+      .timeline-org {
+        font-size: 14px;
+        color: var(--gray-600);
+        margin-bottom: 10px;
+      }
+      .timeline-desc {
+        font-size: 14px;
+        color: var(--gray-800);
+        font-weight: 300;
+        line-height: 1.75;
+      }
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 10px;
+      }
+      .tag {
+        background: var(--teal-50);
+        color: var(--teal-800);
+        border: 0.5px solid var(--teal-200);
+        border-radius: 4px;
+        padding: 3px 10px;
+        font-size: 12px;
+      }
+
+      .contact-bg {
+        background: var(--teal-800);
+      }
+      .contact-bg .section-label {
+        color: var(--teal-200);
+      }
+      .contact-bg .section-title {
+        color: #fff;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+      .contact-desc {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--teal-200);
+        line-height: 1.8;
+      }
+      .contact-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .contact-card {
+        background: rgba(255, 255, 255, 0.07);
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .contact-card:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .contact-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .contact-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--teal-200);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .contact-label {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .contact-value {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 13px;
+        color: var(--gray-200);
+        background: #f7f8f6;
+        border-top: 0.5px solid #d3d1c7;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero-visual {
+          align-items: center;
+        }
+        nav {
+          padding: 0 1.2rem;
+        }
+        .section {
+          padding: 3.5rem 1.2rem;
+        }
+        .hero {
+          padding: 3rem 1.2rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span class="nav-brand">Jossellin Canizalez</span>
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section style="background: #f7f8f6">
+      <div class="hero">
+        <div class="hero-text">
+          <div class="hero-badge">Enfermera Profesional</div>
+          <h1>Cuidando personas, <em>un paciente</em> a la vez.</h1>
+          <p class="hero-sub">
+           Licenciada en Enfermería con vocación de servicio y pasión por el cuidado integral del paciente.
+          </p>
+          <div class="btn-row">
+            <a href="#contacto" class="btn btn-primary">Contáctame</a>
+            <a href="#experiencia" class="btn btn-outline">Ver experiencia</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-circle">
+              <img
+                src="mypicture.jpeg"
+                alt="Jossellin Canizalez"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <span
+                style="
+                  display: none;
+                  align-items: center;
+                  justify-content: center;
+                  width: 100%;
+                  height: 100%;
+                "
+                >JC</span
+              >
+            </div>
+            <div class="avatar-name">Jossellin Canizalez</div>
+            <div class="avatar-title">Licenciada en Enfermería · Salud</div>
+            <div class="avatar-divider"></div>
+            <div class="stat-row">
+              <div class="stat">
+                <div class="stat-num">2+</div>
+                <div class="stat-lbl">Años exp.</div>
+              </div>
+              <!--<div class="stat">
+                <div class="stat-num">500+</div>
+                <div class="stat-lbl">Pacientes</div>
+              </div>-->
+              <div class="stat">
+                <div class="stat-num">5</div>
+                <div class="stat-lbl">Certificados</div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-badge">
+            <div class="dot-green"></div>
+            Disponible para nuevas oportunidades
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SOBRE MÍ -->
+    <section class="section" id="sobre-mi">
+      <div class="section-label">Sobre mí</div>
+      <div class="section-title">Una enfermera guiada por vocación</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Me caracterizo por ser
+            responsable, empática y comprometida con el bienestar físico y emocional de quienes atiendo. Poseo habilidades en atención
+            clínica, trabajo en equipo, comunicación efectiva y organización, con interés en desarrollarme tanto en el área clínica como
+            administrativa. Orientada a brindar una atención humanizada, segura y de calidad, con enfoque en la mejora continua.
+          </p>
+          <!-- <p>
+            A lo largo de mi carrera he trabajado en distintos entornos
+            hospitalarios, acompañando a pacientes en momentos críticos y
+            durante su recuperación, siempre con profesionalismo y calidez.
+          </p> -->
+          <div class="highlight-box">
+            "La enfermería no es solo una profesión — es un llamado a servir,
+            sanar y dar consuelo a quienes más lo necesitan."
+          </div>
+        </div>
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="value-title">Atención compasiva</div>
+              <div class="value-desc">
+                Tratar a cada paciente con dignidad, bondad y respeto.
+              </div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+            </div>
+            <div>
+              <div class="value-title">Precisión clínica</div>
+              <div class="value-desc">
+                Práctica basada en evidencia con atención a la seguridad del
+                paciente.
+              </div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div>
+              <div class="value-title">Trabajo en equipo</div>
+              <div class="value-desc">
+                Colaboración estrecha con médicos y equipos de salud.
+              </div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div>
+              <div class="value-title">Aprendizaje continuo</div>
+              <div class="value-desc">
+                Actualización constante en buenas prácticas y avances médicos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HABILIDADES -->
+    <section class="section skills-bg" id="habilidades">
+      <!-- <div class="section-label">Habilidades</div> -->
+      <div class="section-title">Certificados</div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Fundamentos del cuidado paliativo: Organizacion Panamerica de la salud 25 de febrero de 2026.</span>
+            <!-- <span class="skill-pct">95%</span> -->
+          </div>
+          <!-- <div class="skill-bar">
+            <div class="skill-fill" style="width: 95%"></div>
+          </div> -->
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Precauciones básicas: higiene de manos (COVID-19) Organizacion Panamericana de la Salud 6 de febrero de 2023</span>
+            <!-- <span class="skill-pct">90%</span> -->
+          </div>
+          <!-- <div class="skill-bar">
+            <div class="skill-fill" style="width: 90%"></div>
+          </div> -->
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">MS Excel Basico: Instituo Nacional de Formacion Profesional 11 de septiembre de 2023</span>
+            <!-- <span class="skill-pct">88%</span> -->
+          </div>
+          <!-- <div class="skill-bar">
+            <div class="skill-fill" style="width: 88%"></div>
+          </div> -->
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">La salud de la mujer y el embarazo: Organizacion Panamericana de la Salud 16 de octubre de 2021</span>
+            <!-- <span class="skill-pct">85%</span> -->
+          </div>
+          <!-- <div class="skill-bar">
+            <div class="skill-fill" style="width: 85%"></div>
+          </div> -->
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Liderazgo en Enfermería: Organizacion Panamericana de la Salud. 26 de febrero de 2020.</span>
+            <!-- <span class="skill-pct">82%</span> -->
+          </div>
+          <!-- <div class="skill-bar">
+            <div class="skill-fill" style="width: 82%"></div>
+          </div> -->
+        </div>
+        <!-- <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Educación al paciente</span
+            ><span class="skill-pct">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Historial clínico electrónico</span
+            ><span class="skill-pct">87%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 87%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Pensamiento crítico</span
+            ><span class="skill-pct">93%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 93%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-name">Control de infecciones</span
+            ><span class="skill-pct">96%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 96%"></div>
+          </div>
+        </div> -->
+      </div>
+      <div class="cert-row">
+        <span class="cert-pill">Liderazgo</span>
+        <span class="cert-pill">Gestión Administrativa</span>
+        <span class="cert-pill">Licenciada de Enfermería</span>
+        <span class="cert-pill">Primeros Auxilios</span>
+        <span class="cert-pill">Atención Clínica</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- EXPERIENCIA -->
+    <section class="section" id="experiencia">
+      <div class="section-label">Experiencia</div>
+      <div class="section-title">Trayectoria profesional</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-role">Licenciada en Enfermeria</div>
+          <div class="timeline-org">
+            Hospital el Carmen
+          </div>
+          <div class="timeline-desc">
+            Turnos A, B, C al llamado, programados y de emergencia
+          </div>
+          <div class="tag-list">
+            <span class="tag">Turnos</span>
+            <span class="tag">Emergencia</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 – 2024</div>
+          <div class="timeline-role">Licenciada en Enfermería</div>
+          <div class="timeline-org">
+            Hospital de Especialidades San Felipe
+          </div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Área de Oncología de Mujeres 27 de septiembre del año 2023 al 26 de junio del año 2024</li>
+              <li>Área de Oncología Ambulatoria 27 de junio al 26 de septiembre del año 2024</li>
+            </ul>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Oncología</span>
+            <span class="tag">Quimioterapia</span>
+            <span class="tag">Administración</span>
+            <span class="tag">Investigación</span>
+            <span class="tag">Hospitalización</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 – 2023</div>
+          <div class="timeline-role">Licenciada en Enfermería</div>
+          <div class="timeline-org">Centro de Salud las Crucitas</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Área de Administración</li>
+              <li>Área de Ginecología</li>
+              <li>Área de Vacunación</li>
+              <li>Área de Curaciones e inyecciones</li>
+              <li>Área de tuberculosis</li>
+            </ul>
+          </div>
+          <div class="tag-list">
+            <span class="tag">Administración</span>
+            <span class="tag">Ginecología</span>
+            <span class="tag">Urgencias</span>
+            <span class="tag">Rotaciones clínicas</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022 – 2022</div>
+          <div class="timeline-role">Licenciada en Enfermería</div>
+          <div class="timeline-org">Hospital Psiquiatrico Santa Rosita</div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Unidad Psiquiátrica de mediana y larga estancia (varones y mujeres).</li>
+              <li>Unidad infanto juvenil</li>
+              <li>Unidad de Alcoholismo</li>
+              <li>Servicio de hospitalización</li>
+            </ul>
+            
+          </div>
+          <div class="tag-list">
+            <span class="tag">Licenciatura en Enfermería</span>
+            <span class="tag">Psiquiatria</span>
+            <span class="tag">Hospitalización</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-bg" id="contacto">
+      <div class="section">
+        <div class="section-label">Contacto</div>
+        <div class="section-title">Hablemos</div>
+        <div class="contact-grid">
+          <p class="contact-desc">
+            Disponible para nuevas oportunidades laborales, puestos clínicos o
+            colaboraciones. Escríbeme y conversemos sobre cómo puedo aportar
+            valor a tu equipo de salud.
+          </p>
+          <div class="contact-cards">
+            <a href="mailto:jossellincanizalez@gmail.com" class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Correo electrónico</div>
+                <div class="contact-value">jossellincanizalez@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+50499425975" class="contact-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 5.54 5.54l.95-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Teléfono</div>
+                <div class="contact-value">+504 9942-5975</div>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/canizalez/"
+              class="contact-card"
+            >
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">Jossellin Canizalez</div>
+              </div>
+            </a>
+            <div class="contact-card" style="cursor: default">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Ubicación</div>
+                <div class="contact-value">Honduras</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>&copy; 2026 Jossellin Canizalez · Enfermera Profesional</footer>
+  </body>
+</html>
